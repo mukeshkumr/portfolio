@@ -904,12 +904,18 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--lime); outline-
   display: grid;
   place-items: center;
   overflow: hidden;
+  visibility: hidden;
+  pointer-events: none;
   color: var(--paper);
   background:
     radial-gradient(ellipse at 50% 45%, rgba(126, 77, 52, .12), transparent 48%),
     #090908;
   clip-path: inset(0);
   transition: clip-path .72s cubic-bezier(.76, 0, .24, 1), visibility .72s;
+}
+html.motion-ready .site-loader:not(.is-exiting) {
+  visibility: visible;
+  pointer-events: auto;
 }
 .site-loader::before {
   position: absolute;
